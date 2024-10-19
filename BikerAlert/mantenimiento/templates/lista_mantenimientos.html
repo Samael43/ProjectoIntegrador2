@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimientos</title>
+</head>
+<body>
+    <h1>Lista de Mantenimientos</h1>
+    <ul>
+        {% for mantenimiento in mantenimientos %}
+            <li>{{ mantenimiento.nombre }} ({{ mantenimiento.tipo_mantenimiento.nombre }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Tipos de Mantenimiento</h2>
+    <ul>
+        {% for tipo_mantenimiento in tipos_mantenimiento %}
+            <li>{{ tipo_mantenimiento.nombre }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_mantenimiento' %}">Crear nuevo mantenimiento</a>
+    <a href="{% url 'crear_tipo_mantenimiento' %}">Crear nuevo tipo de mantenimiento</a>
+</body>
+</html>
